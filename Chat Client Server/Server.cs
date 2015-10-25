@@ -22,6 +22,24 @@ namespace Chat_Client_Server
             return false;
         }
 
+        static public bool userExistance(string name, string password)
+        {
+            for (int i = 0; i < Bdd.users.Count(); i++)
+            {
+                if (Bdd.users[i].name == name && Bdd.users[i].password == password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        static public void addUser(string name, string password)
+        {
+            User buffer = new User(name, password);
+            Bdd.users.Add(buffer);
+        }
+
         static public List<string> getRoomList()
         {
             List<string> roomList = new List<string>();

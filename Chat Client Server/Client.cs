@@ -21,7 +21,7 @@ namespace Chat_Client_Server
             Console.Write(" Name : ");
             string name = Console.ReadLine();
             Console.Write(" Password : ");
-            string password = maskPassword();
+            string password = Controller.maskPassword();
             Console.WriteLine("");
 
             if(Server.identification(name, password))
@@ -50,9 +50,42 @@ namespace Chat_Client_Server
 
         public static void subscribe()
         {
-            Console.WriteLine("In progress ...");
-            Console.ReadLine();
-            identification();
+            string name;
+            string password1;
+            string password2;
+
+            GOTOPOINT:
+
+            Console.Clear();
+
+            Console.WriteLine("SUBSCRIPTION");
+            Console.WriteLine("\n\nEnter your informations :");
+
+            Console.Write("\nName : ");
+            name = Console.ReadLine();
+            Console.Write("Password : ");
+            password1 = Controller.maskPassword();
+            Console.WriteLine("");
+            Console.Write("Password : ");
+            password2 = Controller.maskPassword();
+            Console.WriteLine("");
+
+            if (password1 == password2)
+            {
+                if(Controller.subscribtion(name, password1))
+                {
+                    Console.WriteLine("Subscription Done !");
+                    Console.ReadLine();
+                    Console.Clear();
+                    identification();
+                }
+                else
+                {
+                    Console.WriteLine("This name already exist !");
+                    Console.ReadLine();
+                    goto GOTOPOINT;
+                }
+            }           
             return;
         }
 
@@ -113,7 +146,7 @@ namespace Chat_Client_Server
         static public void chatting()
         {
             Console.Clear();
-            Console.WriteLine("     WELCOME IN THE ROOM : " + Session.chatRoom.name);
+            Console.WriteLine("     WELCOME IN THE ROOM : " + Session.chatRoom.name + "\n\n");
 
             while (Session.alive)
             {
@@ -139,29 +172,6 @@ namespace Chat_Client_Server
             }
         }
 
-        public static string maskPassword()
-        {
-            Stack<char> stack = new Stack<char>();
-            ConsoleKeyInfo consoleKeyInfo;
-
-            // push until the enter key is pressed
-            while ((consoleKeyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
-            {
-                if (consoleKeyInfo.Key != ConsoleKey.Backspace)
-                {
-                    stack.Push(consoleKeyInfo.KeyChar);
-                    Console.Write("*");
-                }
-                else
-                {
-                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                    Console.Write(" ");
-                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                    if (stack.Count > 0) stack.Pop();
-                }
-            }
-
-            return stack.Reverse().Aggregate(string.Empty, (pass, kc) => pass += kc.ToString());
-        }
+        
     }
 }

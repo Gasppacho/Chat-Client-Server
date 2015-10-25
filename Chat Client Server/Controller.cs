@@ -44,13 +44,50 @@ namespace Chat_Client_Server
             {
                 Message message = new Message(Session.user.name, DateTime.Now, str);
 
-                Session.chatRoom.addMessage(message);
                 Session.addMessage(message);
 
                 Server.addMessage(message, Session.chatRoom.name);
 
                 return;
             }
+        }
+
+        static public bool subscribtion(string name, string password)
+        {
+            if(Server.userExistance(name, password))
+            {
+                return false;
+            }
+            else
+            {
+                Server.addUser(name, password);
+                return true;
+            }
+        }
+
+        public static string maskPassword()
+        {
+            Stack<char> stack = new Stack<char>();
+            ConsoleKeyInfo consoleKeyInfo;
+
+            // push until the enter key is pressed
+            while ((consoleKeyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            {
+                if (consoleKeyInfo.Key != ConsoleKey.Backspace)
+                {
+                    stack.Push(consoleKeyInfo.KeyChar);
+                    Console.Write("*");
+                }
+                else
+                {
+                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                    Console.Write(" ");
+                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                    if (stack.Count > 0) stack.Pop();
+                }
+            }
+
+            return stack.Reverse().Aggregate(string.Empty, (pass, kc) => pass += kc.ToString());
         }
 
         static public void startChat()
