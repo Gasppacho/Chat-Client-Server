@@ -10,3 +10,15 @@ C:\Git\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.pdb
 C:\Git\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.exe
 C:\Git\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.pdb
 C:\Git\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.csprojResolveAssemblyReference.cache
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.exe.config
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.exe
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.pdb
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.exe
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.pdb
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.csprojResolveAssemblyReference.cache
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.exe.config
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.exe
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.pdb
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.exe
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat Client Server\bin\Debug\Chat Client Server.pdb
+C:\Users\Quentin Cuesta\Documents\Visual Studio 2015\Projects\Chat-Client-Server\Chat Client Server\obj\Debug\Chat Client Server.csprojResolveAssemblyReference.cache

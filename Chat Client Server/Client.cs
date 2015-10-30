@@ -85,7 +85,13 @@ namespace Chat_Client_Server
                     Console.ReadLine();
                     goto GOTOPOINT;
                 }
-            }           
+            }
+            else
+            {
+                Console.WriteLine("One password is wrong");
+                Console.ReadLine();
+                goto GOTOPOINT;
+            }         
             return;
         }
 
