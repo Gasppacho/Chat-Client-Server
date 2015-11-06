@@ -1,0 +1,12 @@
+N:\Programmation\C#\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.exe.config
+N:\Programmation\C#\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.exe
+N:\Programmation\C#\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.pdb
+N:\Programmation\C#\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.csprojResolveAssemblyReference.cache
+N:\Programmation\C#\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.exe
+N:\Programmation\C#\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.pdb
+Z:\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.exe.config
+Z:\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.exe
+Z:\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.pdb
+Z:\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.exe
+Z:\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.pdb
+Z:\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.csprojResolveAssemblyReference.cache
