@@ -42,7 +42,7 @@ namespace TCPService
         // Put all the client socket Thread into a ArrayList
         private ArrayList socketListenerList = null;
 
-        // How to manage the chat rooms?
+        // @TODO : How to manage the different rooms in the server ?
 
         /**
          * The different constructor to make the TCPServer class
@@ -188,6 +188,11 @@ namespace TCPService
             }
         }
 
+        /**
+         * Method to stop the server.
+         * Will check if the server is still active and abord all it's threads.
+         * Also will stop the purging and stop all client sockets
+         */
         public void StopServer()
         {
             // If the server is not already stopped then ...
@@ -230,6 +235,11 @@ namespace TCPService
             Console.WriteLine("The server has stopped");
         }
 
+        /**
+         * This method will stop all the client socket
+         * It will iterate through all the element of the client list 
+         * and stop every one of them before clear the list and set it to null.
+         */
         private void StopAllSocketListeners()
         {
             // For all the socket client in ArrayList.
@@ -244,6 +254,12 @@ namespace TCPService
             socketListenerList = null;
         }
 
+        /**
+         * The purging method will check every 10 seconds if there is 
+         * some clients to be deleted from the list of active clients.
+         * Will iterate through the client list and check is the client 
+         * is marked for deletion before remove it.
+         */
         private void PurgingThreadStart()
         {
             // While the purging is not over.

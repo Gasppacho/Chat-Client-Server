@@ -47,12 +47,16 @@ namespace TCPService
         // A client will wait to receive messages until he is disconnected.
         private void SocketListenerThreadStart()
         {
+            int size = 0;
+            Byte[] byteBuffer = new Byte[1024];
+
             // While the client is not disconnected. 
             while (!stopClient)
             {
                 try
                 {
-
+                    size = clientSocket.Receive(byteBuffer);
+                    ParserBufferArray(byteBuffer, size);
                 }
                 catch(SocketException se) 
                 {
@@ -90,6 +94,11 @@ namespace TCPService
         public bool IsMarkedForDeletion()
         {
             return this.markedForDeletion;
+        }
+
+        private void ParserBufferArray(Byte[] byteBufferArray, int size)
+        {
+            String 
         }
     }
 }
