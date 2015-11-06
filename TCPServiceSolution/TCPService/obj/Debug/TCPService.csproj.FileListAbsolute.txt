@@ -10,3 +10,9 @@ Z:\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.pdb
 Z:\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.exe
 Z:\ChatServer\TCPServiceSolution\TCPService\bin\Debug\TCPService.pdb
 Z:\ChatServer\TCPServiceSolution\TCPService\obj\Debug\TCPService.csprojResolveAssemblyReference.cache
+C:\Users\20120114\Desktop\Chat-Client-Server\TCPServiceSolution\TCPService\bin\Debug\TCPService.exe.config
+C:\Users\20120114\Desktop\Chat-Client-Server\TCPServiceSolution\TCPService\obj\Debug\TCPService.exe
+C:\Users\20120114\Desktop\Chat-Client-Server\TCPServiceSolution\TCPService\obj\Debug\TCPService.pdb
+C:\Users\20120114\Desktop\Chat-Client-Server\TCPServiceSolution\TCPService\bin\Debug\TCPService.exe
+C:\Users\20120114\Desktop\Chat-Client-Server\TCPServiceSolution\TCPService\bin\Debug\TCPService.pdb
+C:\Users\20120114\Desktop\Chat-Client-Server\TCPServiceSolution\TCPService\obj\Debug\TCPService.csprojResolveAssemblyReference.cache

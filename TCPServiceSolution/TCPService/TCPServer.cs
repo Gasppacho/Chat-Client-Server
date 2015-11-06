@@ -32,8 +32,8 @@ namespace TCPService
         private TcpListener server = null;
 
         // State of the server
-        private bool stopServer = false;
-        private bool stopPurging = false;
+        private bool stopServer = false;        // Stop the server
+        private bool stopPurging = false;       // Stop the purging
 
         // MultiThreaded server need Thread to handle the clients.
         private Thread serverThread = null;
@@ -103,26 +103,51 @@ namespace TCPService
             }
         }
 
+        /**
+         * Start the server with the different Thread 
+         * i.e The ServerThread and the PurgingThread 
+         */
         public void StartServer()
         {
+            // If the server is not already started then...
             if(server != null)
             {
-                socketListenerList = new ArrayList();
+                // try to start the server
+                try
+                {
+                    // List of clients
+                    socketListenerList = new ArrayList();
 
-                server.Start();
+                    // Starting the client
+                    server.Start();
 
-                serverThread = new Thread(new ThreadStart(ServerThreadStart));
-                serverThread.Start();
+                    // Starting the Thread for the Server
+                    serverThread = new Thread(new ThreadStart(ServerThreadStart));
+                    serverThread.Start();
 
-                purgingThread = new Thread(new ThreadStart(PurgingThreadStart));
-                purgingThread.Priority = ThreadPriority.Lowest;
-                purgingThread.Start();
+                    // Starting the Thread for the purging of the socketListenerList
+                    purgingThread = new Thread(new ThreadStart(PurgingThreadStart));
+                    purgingThread.Priority = ThreadPriority.Lowest;
+                    purgingThread.Start();
 
-                Console.WriteLine("Server Started.");
-                Console.WriteLine("Waiting for clients ...");
+                    // Indicate to the user that the server as started.
+                    Console.WriteLine("Server Started.");
+                    Console.WriteLine("Waiting for clients ...");
+                }
+                // Catch exceptions 
+                catch (SocketException se)
+                {
+                    Console.WriteLine("The server didn't start properly");
+                    Debug.WriteLine(se.ToString());
+                }
             }
         }
 
+        /**
+         * Thread of the server
+         * This Thread will wait for client to connect, accept them and Add them
+         * to the list of client (i.e socketListenerList)
+         */
         private void ServerThreadStart()
         {
             // Client socket variables.
@@ -147,9 +172,10 @@ namespace TCPService
                     }
 
                     // Start communicating with the client in a different thread.
+                    // @See TCPSocketListener class, method StartSocketListener.
                     socketListener.StartSocketListener();
 
-                    // Indique qu'un nouveau client c'est connecté
+                    // Indicate that a new client as connected.
                     Console.WriteLine("A new client as connected");
                 } 
                 catch(SocketException e)
@@ -164,6 +190,7 @@ namespace TCPService
 
         public void StopServer()
         {
+            // If the server is not already stopped then ...
             if(server != null)
             {
                 stopServer = true;
@@ -172,16 +199,20 @@ namespace TCPService
                 // Wait a second for the Thread to stop.
                 serverThread.Join(1000);
 
+                // Abort the serverThread if still alive
                 if(serverThread.IsAlive)
                 {
                     serverThread.Abort();
                 }
 
+                // Set the server Thread to null.
                 serverThread = null;
 
+                // Stop the Purging Thread
                 stopPurging = true;
                 purgingThread.Join(1000);
 
+                // Abort Purging Thread if still alive
                 if(purgingThread.IsAlive)
                 {
                     purgingThread.Abort();
@@ -195,6 +226,7 @@ namespace TCPService
                 StopAllSocketListeners();
             }
 
+            // Indicate that the server has stopped.
             Console.WriteLine("The server has stopped");
         }
 

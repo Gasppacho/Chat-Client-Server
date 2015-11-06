@@ -7,23 +7,33 @@ namespace TCPService
 {
     class TCPSocketListener
     {
+        // Socket of the client.
         private Socket clientSocket = null;
 
+        // State of the client. 
+        // If stopClient = true, the client must be disconnected.
+        // If markedForDeletion = true, the client must be deleted from the client list.
         private bool stopClient = false;
         private bool markedForDeletion = false;
 
+        // Thread of the client. 
+        // Will wait for message to come.
         private Thread clientListenerThread = null;
         
+        // The socket receive the client's socket
         public TCPSocketListener(Socket socketClient)
         {
             this.clientSocket = socketClient;
         }
 
+        // Stop the client socket
         ~TCPSocketListener()
         {
             StopSocketListener();
         }
 
+        // The client will start to listen with the Thread
+        // SocketListenerThreadStart()
         public void StartSocketListener()
         {
             if(clientSocket != null)
@@ -33,8 +43,11 @@ namespace TCPService
             }
         }
 
+        // This is the main client socket Thread. 
+        // A client will wait to receive messages until he is disconnected.
         private void SocketListenerThreadStart()
         {
+            // While the client is not disconnected. 
             while (!stopClient)
             {
                 try
