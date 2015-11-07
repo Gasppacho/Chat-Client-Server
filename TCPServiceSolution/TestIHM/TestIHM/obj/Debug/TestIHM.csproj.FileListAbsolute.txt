@@ -1,0 +1,13 @@
+N:\Programmation\C#\IHM\TestIHM\TestIHM\bin\Debug\TestIHM.exe.config
+N:\Programmation\C#\IHM\TestIHM\TestIHM\bin\Debug\TestIHM.exe
+N:\Programmation\C#\IHM\TestIHM\TestIHM\bin\Debug\TestIHM.pdb
+N:\Programmation\C#\IHM\TestIHM\TestIHM\obj\Debug\TestIHM.csprojResolveAssemblyReference.cache
+N:\Programmation\C#\IHM\TestIHM\TestIHM\obj\Debug\TestIHM.Properties.Resources.resources
+N:\Programmation\C#\IHM\TestIHM\TestIHM\obj\Debug\TestIHM.csproj.GenerateResource.Cache
+N:\Programmation\C#\IHM\TestIHM\TestIHM\obj\Debug\TestIHM.exe
+N:\Programmation\C#\IHM\TestIHM\TestIHM\obj\Debug\TestIHM.pdb
+N:\Programmation\C#\IHM\TestIHM\TestIHM\obj\Debug\TestIHM.ChatServer.resources
+N:\Programmation\C#\IHM\TestIHM\TestIHM\obj\Debug\TestIHM.ServerSetup.resources
+C:\Users\Nico\Desktop\Chat-Client-Server\TCPServiceSolution\TestIHM\TestIHM\bin\Debug\TestIHM.exe.config
+C:\Users\Nico\Desktop\Chat-Client-Server\TCPServiceSolution\TestIHM\TestIHM\obj\Debug\TestIHM.exe
+C:\Users\Nico\Desktop\Chat-Client-Server\TCPServiceSolution\TestIHM\TestIHM\obj\Debug\TestIHM.pdb
